@@ -6,7 +6,6 @@ import React, {
   NavigatorIOS,
 } from 'react-native';
 import Content from './content';
-import IndexSwiper from './swiper';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,7 +19,7 @@ export default class Index extends Component {
       <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: '夺宝',
+          title: '我的',
           component: Content
         }} />
     );

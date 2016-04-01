@@ -6,7 +6,6 @@ import React, {
   NavigatorIOS,
 } from 'react-native';
 import Content from './content';
-import IndexSwiper from './swiper';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,13 +13,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Index extends Component {
+export default class Share extends Component {
   render() {
     return (
       <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: '夺宝',
+          title: '晒单',
           component: Content
         }} />
     );
