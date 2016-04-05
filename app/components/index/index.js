@@ -18,10 +18,11 @@ export default class Index extends Component {
   render() {
     return (
       <NavigatorIOS
+        barTintColor='#FF4747'
         style={styles.container}
         initialRoute={{
           title: '夺宝',
-          component: Content
+          component: Content,
         }} />
     );
   }

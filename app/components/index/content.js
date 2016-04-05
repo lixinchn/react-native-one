@@ -3,15 +3,22 @@ import React, {
   StyleSheet,
   View,
   Text,
+  ScrollView,
 } from 'react-native';
+import IndexSwiper from './swiper';
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
 });
 
 export default class Content extends Component {
   render() {
     return (
-      <View></View>
+      <ScrollView style={styles.container}>
+        <IndexSwiper />
+      </ScrollView>
     );
   }
 }

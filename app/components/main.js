@@ -12,7 +12,7 @@ import Home from './home/index.js';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FEFEFE',
+    // backgroundColor: '#FEFEFE',
   }
 });
 
@@ -25,10 +25,12 @@ export default class Main extends Component {
   }
   render() {
     return (
-      <TabBarIOS selectedTab={this.state.selectedTab}>
+      <TabBarIOS
+        selectedTab={this.state.selectedTab}
+        tintColor='#FF4747'>
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'index'}
-          icon={{uri:'index'}}
+          icon={require('../../res/btn_index_normal.png')}
           title={'夺宝'}
           onPress={() => {
             this.setState({
@@ -39,7 +41,7 @@ export default class Main extends Component {
         </TabBarIOS.Item>
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'share'}
-          icon={{uri:'share'}}
+          icon={require('../../res/btn_share_normal.png')}
           title={'晒单'}
           onPress={() => {
             this.setState({
@@ -50,7 +52,7 @@ export default class Main extends Component {
         </TabBarIOS.Item>
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'home'}
-          icon={{uri:'home'}}
+          icon={require('../../res/btn_home_normal.png')}
           title={'我的'}
           onPress={() => {
             this.setState({

@@ -9,9 +9,12 @@ import Swiper from 'react-native-swiper';
 export default class IndexSwiper extends Component {
   render() {
     return (
-      <Swiper style={styles.wrapper} showButtons={true} height={80}>
+      <Swiper style={styles.wrapper} showButtons={true} height={200}>
         <View style={styles.slide}>
           <Text style={styles.text}>Hello</Text>
+        </View>
+        <View style={styles.slide}>
+          <Text style={styles.text}>Hello1</Text>
         </View>
       </Swiper>
     );
@@ -20,7 +23,7 @@ export default class IndexSwiper extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    height: 80,
+    flex: 1,
   },
 
   slide: {
@@ -34,5 +37,5 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 30,
   }
-})
+});
 
