@@ -3,34 +3,41 @@ import React, {
   StyleSheet,
   View,
   Text,
+  Image,
+  Dimensions,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 export default class IndexSwiper extends Component {
   render() {
     return (
-      <Swiper style={styles.wrapper} showButtons={true} height={200}>
+      <Swiper style={styles.wrapper} showButtons={true} height={150} loop={true} autoplay={true}>
         <View style={styles.slide}>
-          <Text style={styles.text}>Hello</Text>
+          <Image style={styles.image} source={require('../../../res/banner_bg.png')} />
         </View>
         <View style={styles.slide}>
-          <Text style={styles.text}>Hello1</Text>
+          <Image style={styles.image} source={require('../../../res/banner_iphone6s.jpg')} />
         </View>
       </Swiper>
     );
   }
 }
 
+let width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
   },
 
   slide: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#9DD6EB',
+  },
+
+  image: {
+    flex: 1,
+    resizeMode: 'stretch',
+    padding: 0,
+    width: width,
   },
 
   text: {
