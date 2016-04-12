@@ -23,7 +23,9 @@ export default class Main extends Component {
       selectedTab: 'index',
     };
   }
+
   render() {
+    console.log('main render');
     return (
       <TabBarIOS
         selectedTab={this.state.selectedTab}
@@ -37,7 +39,7 @@ export default class Main extends Component {
               selectedTab: 'index'
             });
           }}>
-          <Index />
+          <Index {...this.props}/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'share'}

@@ -10,14 +10,7 @@ import React, {
   Text,
   View
 } from 'react-native';
-import Main from './app/components/main';
+import Root from './app/containers/root';
 
-class OneDollar extends Component {
-  render() {
-    return (
-      <Main />
-    );
-  }
-}
 
-AppRegistry.registerComponent('OneDollar', () => OneDollar);
+AppRegistry.registerComponent('OneDollar', () => Root);

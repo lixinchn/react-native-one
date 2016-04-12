@@ -1,0 +1,2 @@
+export const REQUEST_BANNER = 'REQUEST_BANNER';
+export const RECEIVE_BANNER = 'RECEIVE_BANNER';

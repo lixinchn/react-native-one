@@ -17,7 +17,7 @@ export default class Content extends Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <IndexSwiper />
+        <IndexSwiper {...this.props}/>
       </ScrollView>
     );
   }

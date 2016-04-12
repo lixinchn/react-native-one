@@ -3,10 +3,9 @@ import React, {
   StyleSheet,
   View,
   Text,
-  NavigatorIOS,
+  Navigator,
 } from 'react-native';
 import Content from './content';
-import IndexSwiper from './swiper';
 
 const styles = StyleSheet.create({
   container: {
@@ -15,14 +14,21 @@ const styles = StyleSheet.create({
 });
 
 export default class Index extends Component {
+  renderScene() {
+    return (
+      <Content {...this.props} />
+    );
+  }
   render() {
     return (
-      <NavigatorIOS
-        barTintColor='#FF4747'
+      <Navigator
+        barTintColor='#FD3934'
         style={styles.container}
+        renderScene={this.renderScene.bind(this)}
         initialRoute={{
           title: '夺宝',
           component: Content,
+          passProps: {...this.props}
         }} />
     );
   }
