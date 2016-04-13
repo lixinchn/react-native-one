@@ -25,7 +25,6 @@ export default class Main extends Component {
   }
 
   render() {
-    console.log('main render');
     return (
       <TabBarIOS
         selectedTab={this.state.selectedTab}

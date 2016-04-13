@@ -19,7 +19,7 @@ export default class IndexSwiper extends Component {
       <Swiper style={styles.wrapper} showButtons={true} height={150} loop={true} autoplay={true}>
         {this.props.banners && this.props.banners.map((banner) => 
           <View style={styles.slide}>
-            <Image style={styles.image} source={{uri: banner.pic_url}}/>
+            <Image id={banner.id} style={styles.image} source={{uri: banner.pic_url}} click_url={banner.click_url}/>
           </View>
         )}
       </Swiper>
