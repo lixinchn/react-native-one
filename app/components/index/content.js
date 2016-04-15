@@ -5,7 +5,8 @@ import React, {
   Text,
   ScrollView,
 } from 'react-native';
-import IndexSwiper from './swiper';
+import IndexBanner from './banner';
+import IndexProList from './pro_list';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,7 +35,8 @@ export default class Content extends Component {
         </View>
         <ScrollView
           automaticallyAdjustContentInsets={false}>
-          <IndexSwiper {...this.props}/>
+          <IndexBanner {...this.props} />
+          <IndexProList {...this.props} />
         </ScrollView>
       </View>
     );

@@ -1,11 +1,10 @@
 import {
   REQUEST_BANNER,
   RECEIVE_BANNER,
-} from '../constants/action_types';
-import COMMON_PARAM from '../constants/common';
+} from '../../constants/action_types';
+import COMMON_PARAM from '../../constants/common';
 
-// const API_ROOT = 'http://api.duo17.com/banner.do?';
-const API_ROOT = 'http://b-one.aa123bb.com/banner.do?';
+const API_ROOT = COMMON_PARAM.host + 'banner.do?';
 
 function requestBanner() {
   return {

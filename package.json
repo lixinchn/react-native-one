@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "react": "^0.14.8",
-    "react-native": "^0.22.2",
+    "react-native": "^0.23.1",
     "react-native-swiper": "^1.4.3",
     "react-redux": "^4.4.1",
     "redux": "^3.3.1",

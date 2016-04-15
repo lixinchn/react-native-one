@@ -4,10 +4,12 @@ import Main from '../components/main';
 function mapStateToProps(state) {
   const {
     banners,
+    proList,
   } = state;
 
   return {
-    banners
+    banners,
+    proList,
   };
 }
 

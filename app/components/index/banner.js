@@ -7,21 +7,24 @@ import React, {
   Dimensions,
 } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { fetchBanners } from '../../actions/index';
+import { fetchBanners } from '../../actions/index/banner.js';
 
-export default class IndexSwiper extends Component {
+export default class IndexBanner extends Component {
   componentDidMount() {
     this.props.dispatch(fetchBanners());
   }
 
   render() {
     return (
-      <Swiper style={styles.wrapper} showButtons={true} height={150} loop={true} autoplay={true}>
-        {this.props.banners && this.props.banners.map((banner) => 
+      <Swiper style={styles.wrapper} showButtons={true} height={180} loop={true} autoplay={true}>
+        {this.props.banners ? this.props.banners.map((banner) => 
           <View style={styles.slide}>
             <Image id={banner.id} style={styles.image} source={{uri: banner.pic_url}} click_url={banner.click_url}/>
           </View>
-        )}
+        ) : <View style={styles.slide}>
+              <Image style={styles.image} source={require('../../../res/banner_bg.png')}/>
+            </View>
+        }
       </Swiper>
     );
   }
