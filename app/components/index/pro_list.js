@@ -24,10 +24,7 @@ export default class IndexProList extends Component {
   }
 
   renderItem(pro) {
-    console.log(pro.proProgress * 100);
-    console.log(pro.price);
     progress = Number.parseInt(pro.proProgress * 100 / pro.price * progressBarWidth)
-    console.log(progress);
     return (
       <View style={styles.container}>
         <Image
