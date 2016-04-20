@@ -24,6 +24,10 @@ export default class IndexProList extends Component {
   }
 
   renderItem(pro) {
+    console.log(pro.proProgress * 100);
+    console.log(pro.price);
+    progress = Number.parseInt(pro.proProgress * 100 / pro.price * progressBarWidth)
+    console.log(progress);
     return (
       <View style={styles.container}>
         <Image
@@ -32,7 +36,9 @@ export default class IndexProList extends Component {
         <View style={styles.progress_container}>
           <Text style={styles.pro_title} numberOfLines={2}>{pro.title}</Text>
           <View style={styles.progress_v}>
-            <View style={styles.progress}></View>
+            <View style={styles.progress}>
+              <View style={[styles.progress_now, {width: progress}]}></View>
+            </View>
             <Text style={styles.progress_t}>开奖进度</Text>
             <Text style={styles.progress_r}>{Math.floor(pro.proProgress * 100 * 100 / pro.price)}%</Text>
           </View>
@@ -43,10 +49,12 @@ export default class IndexProList extends Component {
 }
 
 let width = Dimensions.get('window').width;
+const progressBarWidth = 80
 const styles = StyleSheet.create({
   container: {
     height: 200,
     flex: 1,
+    alignItems: 'center',
   },
 
   pro_img: {
@@ -64,6 +72,7 @@ const styles = StyleSheet.create({
 
   pro_title: {
     fontSize: 10,
+    height: 25,
   },
 
   progress_t: {
@@ -77,15 +86,21 @@ const styles = StyleSheet.create({
   },
 
   progress: {
-    width: 80,
+    width: progressBarWidth,
     height: 5,
     backgroundColor: 'gray',
     borderRadius: 3,
   },
 
+  progress_now: {
+    backgroundColor: '#FD3934',
+    height: 5,
+    borderRadius: 3,
+  },
+
   progress_container: {
+    width: 150,
     marginLeft: 5,
-    flex: 1,
     flexDirection: 'column',
   }
 });
