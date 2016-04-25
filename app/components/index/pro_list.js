@@ -26,7 +26,7 @@ export default class IndexProList extends Component {
   renderItem(pro) {
     progress = Number.parseInt(pro.proProgress * 100 / pro.price * progressBarWidth)
     return (
-      <View style={styles.container}>
+      <View style={styles.container} key={pro.roundId}>
         <Image
           style={styles.pro_img}
           source={{uri: pro.listImage}} />

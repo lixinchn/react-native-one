@@ -59,6 +59,7 @@ export default class GridView extends Component {
         renderRow={this.renderGroup.bind(this)}
         onEndReached={this.props.onEndReached}
         scrollEnabled={this.props.scrollEnabled}
+        enableEmptySections={true}
         pageSize={this.props.pageSize | 1}/>
     );
   }
