@@ -24,7 +24,10 @@ export default function banners(state = {
       });
     case RECEIVE_PRO_LIST:
       return Object.assign({}, state, {
-        proList: action.proList,
+        proList: [
+            ...state.proList,
+            ...action.proList,
+        ],
       });
     default:
       return state;
