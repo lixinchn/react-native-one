@@ -7,11 +7,11 @@ import React, {
   Dimensions,
 } from 'react-native';
 import GridView from '../../lib/grid_view';
-import { fetchProList } from '../../actions/index/pro_list';
+import { fetchProListIfNeeded } from '../../actions/index/pro_list';
 
 export default class IndexProList extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchProList());
+    this.props.dispatch(fetchProListIfNeeded());
   }
 
   render() {

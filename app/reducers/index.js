@@ -8,6 +8,7 @@ import {
 export default function banners(state = {
   banners: [],
   proList: [],
+  isFetching: false,
 }, action) {
   switch (action.type) {
     case REQUEST_BANNER:
@@ -20,7 +21,7 @@ export default function banners(state = {
       });
     case REQUEST_PRO_LIST:
       return Object.assign({}, state, {
-
+        isFetching: true,
       });
     case RECEIVE_PRO_LIST:
       return Object.assign({}, state, {
@@ -28,6 +29,7 @@ export default function banners(state = {
             ...state.proList,
             ...action.proList,
         ],
+        isFetching: false,
       });
     default:
       return state;
