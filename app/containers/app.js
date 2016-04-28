@@ -5,11 +5,13 @@ function mapStateToProps(state) {
   const {
     banners,
     proList,
+    refresh,
   } = state;
 
   return {
     banners,
     proList,
+    refresh,
   };
 }
 

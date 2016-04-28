@@ -3,12 +3,14 @@ import {
   RECEIVE_BANNER,
   REQUEST_PRO_LIST,
   RECEIVE_PRO_LIST,
+  RECEIVE_PRO_LIST_FOR_REFRESH,
 } from '../constants/action_types';
 
 export default function banners(state = {
   banners: [],
   proList: [],
   isFetching: false,
+  refresh: false,
 }, action) {
   switch (action.type) {
     case REQUEST_BANNER:
@@ -30,6 +32,14 @@ export default function banners(state = {
             ...action.proList,
         ],
         isFetching: false,
+      });
+    case RECEIVE_PRO_LIST_FOR_REFRESH:
+      return Object.assign({}, state, {
+        proList: [
+            ...action.proList,
+        ],
+        isFetching: false,
+        refresh: true,
       });
     default:
       return state;
