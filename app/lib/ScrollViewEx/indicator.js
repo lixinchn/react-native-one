@@ -15,7 +15,7 @@ export default class Indicator extends React.Component {
 
   render () {
     return (
-      <View style={styles.indicator_wrap}>
+      <View style={[styles.indicator_wrap, {opacity: this.props.opacity}]}>
         <View style={{transform: [{rotate: this.props.rotationDeg + 'deg'}]}}><Text>↓</Text></View>
         <Text>{this.props.displayText}</Text>
       </View>
@@ -31,6 +31,7 @@ const styles = React.StyleSheet.create({
     left: 0,
     right: 0,
     marginBottom: 20,
+    opacity: 0,
   },
 });
 
