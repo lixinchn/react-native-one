@@ -3,7 +3,7 @@ import React, {
   StyleSheet,
   View,
   Text,
-  NavigatorIOS,
+  Navigator,
 } from 'react-native';
 import Content from './content';
 
@@ -14,13 +14,22 @@ const styles = StyleSheet.create({
 });
 
 export default class Share extends Component {
+  renderScene(route, navigator) {
+    return (
+      <Content {...this.props} title={route.title}/>
+    );
+  }
   render() {
     return (
-      <NavigatorIOS
+      <Navigator
+        barTintColor='#FD3934'
         style={styles.container}
+        renderScene={this.renderScene.bind(this)}
         initialRoute={{
-          title: '晒单',
-          component: Content
+          title: '晒单分享',
+          id: 'share',
+          component: Content,
+          passProps: {...this.props}
         }} />
     );
   }

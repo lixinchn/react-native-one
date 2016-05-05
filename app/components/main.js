@@ -49,7 +49,7 @@ export default class Main extends Component {
               selectedTab: 'share'
             });
           }}>
-          <Share />
+          <Share {...this.props}/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           selected={this.state.selectedTab === 'home'}
@@ -60,7 +60,7 @@ export default class Main extends Component {
               selectedTab: 'home'
             });
           }}>
-          <Home />
+          <Home {...this.props}/>
         </TabBarIOS.Item>
       </TabBarIOS>
     );

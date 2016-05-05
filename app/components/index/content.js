@@ -69,7 +69,7 @@ export default class Content extends Component {
   }
 
   componentDidUpdate() {
-    this.onChooseLastRoundIdAndLastWeight(this.props.proList, this.props.refresh);
+    this.onChooseLastRoundIdAndLastWeight(this.props.index.proList, this.props.index.refresh);
   }
 
   render() {

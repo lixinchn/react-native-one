@@ -17,7 +17,7 @@ export default class IndexBanner extends Component {
   render() {
     return (
       <Swiper style={styles.wrapper} showButtons={true} height={180} loop={true} autoplay={true}>
-        {this.props.banners ? this.props.banners.map((banner) => 
+        {this.props.index.banners ? this.props.index.banners.map((banner) => 
           <View style={styles.slide} key={banner.id}>
             <Image id={banner.id} style={styles.image} source={{uri: banner.pic_url}} click_url={banner.click_url}/>
           </View>

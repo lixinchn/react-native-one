@@ -17,7 +17,7 @@ export default class IndexProList extends Component {
   render() {
     return (
       <GridView
-        items={this.props.proList}
+        items={this.props.index.proList}
         itemsPerRow={2}
         renderItem={this.renderItem}/>
     );
