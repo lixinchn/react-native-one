@@ -16,12 +16,7 @@ const styles = StyleSheet.create({
 export default class Index extends Component {
   render() {
     return (
-      <NavigatorIOS
-        style={styles.container}
-        initialRoute={{
-          title: '我的',
-          component: Content
-        }} />
+      <View><Text>我的</Text></View>
     );
   }
 }

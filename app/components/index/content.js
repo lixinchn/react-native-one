@@ -15,18 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  header: {
-    backgroundColor: '#FD3934',
-    height: 60,
-    justifyContent: 'center',
-    paddingTop: 15,
-  },
-
-  title: {
-    fontSize: 18,
-    textAlign: 'center',
-  },
-
   scroll: {
     marginBottom: -35,
   }
@@ -75,9 +63,6 @@ export default class Content extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.title}>{this.props.title}</Text>
-        </View>
         <ScrollViewEx
           style={styles.scroll}
           onLoadMore={this.onLoadMore.bind(this)}

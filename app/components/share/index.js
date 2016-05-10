@@ -14,23 +14,9 @@ const styles = StyleSheet.create({
 });
 
 export default class Share extends Component {
-  renderScene(route, navigator) {
-    return (
-      <Content {...this.props} title={route.title}/>
-    );
-  }
   render() {
     return (
-      <Navigator
-        barTintColor='#FD3934'
-        style={styles.container}
-        renderScene={this.renderScene.bind(this)}
-        initialRoute={{
-          title: '晒单分享',
-          id: 'share',
-          component: Content,
-          passProps: {...this.props}
-        }} />
+      <Content {...this.props}/>
     );
   }
 }

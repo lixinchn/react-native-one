@@ -10,6 +10,7 @@ import React, {
 import { fetchAllShareOrderIfNeeded } from '../../actions/share/all_share_order';
 import Lightbox from '../../lib/Lightbox/Lightbox';
 import GridView from '../../lib/grid_view';
+import ShareDetail from './share_detail';
 
 
 const DEFAULT_AVATAR = 'http://api.duo17.com/webapp/one_dollar/dest/img/avatar.png';
@@ -64,7 +65,7 @@ export default class IndexAllShareOrder extends Component {
               </View>
               <View style={styles.tail_box}>
                 <Text style={styles.round}>{'期号：' + order.roundId}</Text>
-                <Text style={styles.detail}>{'查看详情'}</Text>
+                <Text style={styles.detail} onPress={this.onDetailPress.bind(this)}>{'查看详情'}</Text>
               </View>
             </View>
           </View>
@@ -88,6 +89,15 @@ export default class IndexAllShareOrder extends Component {
     if (this.state.imageHeight !== 0) return;
     let {x, y, width, height} = e.nativeEvent.layout;
     this.setState({'imageHeight': width / 3});
+  }
+
+  onDetailPress() {
+    this.props.navigator.push({
+      name: 'share_detail',
+      title: '晒单详情',
+      component: ShareDetail,
+      index: 1,
+    })
   }
 }
 
