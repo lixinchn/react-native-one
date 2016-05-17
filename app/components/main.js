@@ -50,7 +50,6 @@ export default class Main extends Component {
   }
 
   genTitle(selectedTab) {
-    console.log(selectedTab);
     return this.state.tabData[selectedTab].title;
   }
 
