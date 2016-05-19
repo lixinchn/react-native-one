@@ -47,7 +47,7 @@ export default class NavigatorEx extends Component {
         <View style={styles.body}>
           {
             route.component
-            ? <route.component />
+            ? <route.component {...route.passProps}/>
             : this.props.renderScene(route, navigator)
           }
         </View>

@@ -65,7 +65,7 @@ export default class IndexAllShareOrder extends Component {
               </View>
               <View style={styles.tail_box}>
                 <Text style={styles.round}>{'期号：' + order.roundId}</Text>
-                <Text style={styles.detail} onPress={this.onDetailPress.bind(this)}>{'查看详情'}</Text>
+                <TouchableHighlight underlayColor='#f0f8ff' activeOpacity={0.5} onPress={this.onDetailPress.bind(this, order)}><Text style={styles.detail}>{'查看详情'}</Text></TouchableHighlight>
               </View>
             </View>
           </View>
@@ -91,12 +91,12 @@ export default class IndexAllShareOrder extends Component {
     this.setState({'imageHeight': width / 3});
   }
 
-  onDetailPress() {
+  onDetailPress(order) {
     this.props.navigator.push({
       name: 'share_detail',
       title: '晒单详情',
       component: ShareDetail,
-      index: 1,
+      passProps: order,
     })
   }
 }
