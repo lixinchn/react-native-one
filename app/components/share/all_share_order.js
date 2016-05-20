@@ -10,6 +10,7 @@ import React, {
 import { fetchAllShareOrderIfNeeded } from '../../actions/share/all_share_order';
 import Lightbox from '../../lib/Lightbox/Lightbox';
 import GridView from '../../lib/grid_view';
+import COMMON_PARAM from '../../constants/common';
 import ShareDetail from './share_detail';
 
 
@@ -65,7 +66,7 @@ export default class IndexAllShareOrder extends Component {
               </View>
               <View style={styles.tail_box}>
                 <Text style={styles.round}>{'期号：' + order.roundId}</Text>
-                <TouchableHighlight underlayColor='#f0f8ff' activeOpacity={0.5} onPress={this.onDetailPress.bind(this, order)}><Text style={styles.detail}>{'查看详情'}</Text></TouchableHighlight>
+                <TouchableHighlight underlayColor={COMMON_PARAM.onPressUnderlayColor} activeOpacity={COMMON_PARAM.onPressActiveOpacity} onPress={this.onDetailPress.bind(this, order)}><Text style={styles.detail}>{'查看详情'}</Text></TouchableHighlight>
               </View>
             </View>
           </View>
@@ -96,7 +97,8 @@ export default class IndexAllShareOrder extends Component {
       name: 'share_detail',
       title: '晒单详情',
       component: ShareDetail,
-      passProps: order,
+      passProps: {...order, ...this.props},
+      showLeftBackButton: true,
     })
   }
 }
